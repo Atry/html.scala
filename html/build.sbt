@@ -8,7 +8,7 @@ Test / requireJsDomEnv := true
 
 libraryDependencies += "org.scalatest" %%% "scalatest" % "3.2.19" % Test
 
-libraryDependencies += "org.scala-js" %%% "scalajs-dom" % "2.4.0"
+libraryDependencies += "org.scala-js" %%% "scalajs-dom" % "2.8.0"
 
 libraryDependencies += "com.thoughtworks.binding" %%% "bindable" % "3.0.0"
 
