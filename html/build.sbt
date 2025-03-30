@@ -19,5 +19,3 @@ libraryDependencies += "net.sourceforge.htmlunit" % "neko-htmlunit" % "2.70.0"
 libraryDependencies += "com.thoughtworks.dsl" %%% "macros-reset" % "2.0.0"
 
 libraryDependencies += "com.thoughtworks.dsl" %%% "keywords-await" % "2.0.0" % Test
-
-webpack / version := "5.75.0"
