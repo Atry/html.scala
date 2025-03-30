@@ -6,7 +6,7 @@ enablePlugins(Example)
 
 Test / requireJsDomEnv := true
 
-libraryDependencies += "org.scalatest" %%% "scalatest" % "3.2.16" % Test
+libraryDependencies += "org.scalatest" %%% "scalatest" % "3.2.19" % Test
 
 libraryDependencies += "org.scala-js" %%% "scalajs-dom" % "2.4.0"
 
