@@ -35,13 +35,13 @@ private[html] object InterpolationParser:
         case null =>
           BitSet.empty
         case arg =>
-          BitSet(arg.asInstanceOf[Int])
-      ) ++ (node.getUserData(AttributeArgumentsUserDataKey) match
+          BitSet(arg.asInstanceOf[Int])) ++ (node.getUserData(
+        AttributeArgumentsUserDataKey
+      ) match
         case null =>
           BitSet.empty
         case args: Map[_, Int @unchecked] =>
-          args.values.to(BitSet)
-      )
+          args.values.to(BitSet))
 
   /** Concatenate `parts` and parse it as HTML, assuming there are arguments
     * between each parts.
