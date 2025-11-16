@@ -160,7 +160,9 @@ package html {
         case _ =>
           report.error("Unsupported node: " + node.toString)
           '{ ??? }
-    def mountProperty[E <: org.scalajs.dom.Element, K, V](using Quotes)(
+    def mountProperty[E <: org.scalajs.dom.Element, K, V](using
+        Quotes
+    )(
         element: Element,
         elementExpr: Expr[E],
         propertySymbol: scala.quoted.quotes.reflect.Symbol,
@@ -255,7 +257,9 @@ package html {
     def mountElementAttributesAndChildNodes[E <: org.scalajs.dom.Element](
         element: Element,
         elementExpr: Expr[E]
-    )(using argExprs: IndexedSeq[Expr[Any]])(using
+    )(using
+        argExprs: IndexedSeq[Expr[Any]]
+    )(using
         Type[E],
         Quotes
     ): Expr[Binding.Stable[org.scalajs.dom.Element]] =
@@ -378,7 +382,9 @@ package html {
         }
       )
 
-    def transformElement(element: Element)(using IndexedSeq[Expr[Any]])(using
+    def transformElement(element: Element)(using
+        IndexedSeq[Expr[Any]]
+    )(using
         Quotes
     ): Expr[Binding.Stable[org.scalajs.dom.Element]] =
       element.getNamespaceURI match
@@ -408,7 +414,9 @@ package html {
 
     def transformComment(
         comment: Comment
-    )(using argExprs: IndexedSeq[Expr[Any]])(using
+    )(using
+        argExprs: IndexedSeq[Expr[Any]]
+    )(using
         Quotes
     ): Expr[Any] =
       import scala.quoted.quotes.reflect.*
@@ -425,7 +433,9 @@ package html {
             case '[t] =>
               Reset.Macros.reify[false, false, t](expr.asExprOf[t])
 
-    def transformNodeList(nodeList: NodeList)(using IndexedSeq[Expr[Any]])(using
+    def transformNodeList(nodeList: NodeList)(using
+        IndexedSeq[Expr[Any]]
+    )(using
         Quotes
     ): Expr[BindingSeq[org.scalajs.dom.Node]] =
       import scala.quoted.quotes.reflect.report
