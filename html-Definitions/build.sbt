@@ -1,3 +1,3 @@
 enablePlugins(ScalaJSPlugin)
 
-libraryDependencies += "org.scala-js" %%% "scalajs-dom" % "2.8.0"
+libraryDependencies += "org.scala-js" %%% "scalajs-dom" % "2.8.1"
