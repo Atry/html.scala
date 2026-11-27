@@ -6,7 +6,7 @@ import org.scalajs.dom
 import org.scalatest.funsuite.AnyFunSuite
 
 class ExternalHtmlInterpolationSpec extends AnyFunSuite:
-  test("html interpolation resolves adaptors outside its implementation package"):
+  test("html interpolation resolves adaptors outside its implementation package") {
     val key = "external-id"
     val element = html"<span id=$key></span>"
     assert(element.value.id == key)
@@ -16,3 +16,4 @@ class ExternalHtmlInterpolationSpec extends AnyFunSuite:
     parent.watch()
     try assert(parent.value.textContent == "child")
     finally parent.unwatch()
+  }
