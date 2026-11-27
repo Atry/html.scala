@@ -614,11 +614,11 @@ package html {
       childrenBinding: Binding.BindingSeq[Node]
   ): Binding[Unit] = new NodeSeqMountPoint(parent, childrenBinding)
 
-  private[html] opaque type BindingSeqNodeAdaptor[
+  opaque type BindingSeqNodeAdaptor[
       From
   ] <: From => Binding[BindingSeq[Node]] =
     From => Binding[BindingSeq[Node]]
-  private[html] object BindingSeqNodeAdaptor:
+  object BindingSeqNodeAdaptor:
     given [StringKeyword, Value <: String](using
         run: Dsl.Run[StringKeyword, Binding[Value], Value]
     ): BindingSeqNodeAdaptor[StringKeyword] = { keyword =>
@@ -641,10 +641,10 @@ package html {
     }
   end BindingSeqNodeAdaptor
 
-  private[html] opaque type AttributeAdaptor[-From, +To] <: From => To =
+  opaque type AttributeAdaptor[-From, +To] <: From => To =
     From => To
 
-  private[html] object AttributeAdaptor:
+  object AttributeAdaptor:
 
     given [Keyword, BindingValue, Value](using
         run: Dsl.Run[Keyword, Binding[BindingValue], Value]
